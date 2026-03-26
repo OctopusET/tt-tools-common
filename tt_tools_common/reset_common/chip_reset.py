@@ -39,7 +39,7 @@ def check_xen_hvm() -> bool:
             hypervisor_type = f.read().strip()
         with open("/sys/hypervisor/guest_type", "r") as f:
             guest_type = f.read().strip()
-        if hypervisor_type == "xen" and guest_type == "HVM":
+        if hypervisor_type == "xen":
             is_xen_hvm = True
     except FileNotFoundError:
         # One or both files do not exist
